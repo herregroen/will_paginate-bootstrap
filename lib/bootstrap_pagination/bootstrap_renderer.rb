@@ -30,7 +30,7 @@ module BootstrapPagination
       if page == current_page
         tag("li", link(page, "#", class: 'page-link'), class: "active page-item")
       else
-        tag("li", link(page, page, link_options.merge(rel: rel_value(page), class: 'page-link')))
+        tag("li", link(page, page, link_options.merge(rel: rel_value(page), class: 'page-link')), class: 'page-item')
       end
     end
 
