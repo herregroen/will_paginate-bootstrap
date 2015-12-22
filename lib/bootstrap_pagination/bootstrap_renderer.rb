@@ -38,14 +38,14 @@ module BootstrapPagination
       link_options = @options[:link_options] || {}
 
       if page
-        tag("li", link(text, page, link_options), class: "%s page-item" % classname)
+        tag("li", link(text, page, link_options.merge(class: 'page-link')), class: "%s page-item" % classname)
       else
-        tag("li", link(text, "#"), class: "%s disabled page-item" % classname)
+        tag("li", link(text, "#", class: 'page-link'), class: "%s disabled page-item" % classname)
       end
     end
 
     def gap
-      tag("li", link(ELLIPSIS, "#"), class: "page-item disabled")
+      tag("li", link(ELLIPSIS, "#", class: 'page-link'), class: "page-item disabled")
     end
 
     def previous_page
